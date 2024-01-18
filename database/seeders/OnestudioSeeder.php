@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Onestudio;
 
 class OnestudioSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class OnestudioSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Onestudio::factory(10)->create();
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Twostudio;
 
 class TwostudioSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class TwostudioSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Twostudio::factory(10)->create();
     }
 }

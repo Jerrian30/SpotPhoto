@@ -56,6 +56,7 @@
     <script src="{{ asset('sbadmin/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('sbadmin/js/demo/chart-pie-demo.js') }}"></script>
     @yield('js')
+    
    
 </body>
 

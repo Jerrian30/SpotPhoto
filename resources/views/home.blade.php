@@ -1,30 +1,27 @@
+<!-- resources/views/chart.blade.php -->
+
 @extends('layouts.master')
-@section('title', 'Home')
+
 @section('js')
 <script src="{{ $chart->cdn() }}"></script>
 
 {{ $chart->script() }}
-
 @endsection
 
 
-
 @section('content')
-<h1>HALAMAN HOME</h1>
-
-<div class="container px-4 mx-auto">
-
-    <div class="p-6 m-20 bg-white rounded shadow">
-        
-                <!-- Card Body -->
-                <div class="card-body">
-                    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Grafik Pelanggan</div>
+                    <div class="card-body">
                         {!! $chart->container() !!}
-                
-                    
+                    </div>
                 </div>
+            </div>
+        </div>
     </div>
 
-</div>
-
+    {!! $chart->script() !!}
 @endsection
