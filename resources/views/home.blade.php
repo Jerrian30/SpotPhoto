@@ -3,25 +3,25 @@
 @extends('layouts.master')
 
 @section('js')
-<script src="{{ $chart->cdn() }}"></script>
+<script src="{{ $allstudio->cdn() }}"></script>
 
-{{ $chart->script() }}
+
+{{ $allstudio->script() }}
 @endsection
 
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Grafik Pelanggan</div>
-                    <div class="card-body">
-                        {!! $chart->container() !!}
-                    </div>
-                </div>
-            </div>
+<div class="container mt-4">
+    <div class="row">
+      <!-- Grafik Besar -->
+      <div class="col-lg-10 mx-auto mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Grafik Besar</h5>
+            {!! $allstudio->container() !!}
+          </div>
         </div>
+      </div>
     </div>
-
-    {!! $chart->script() !!}
+  </div>
 @endsection

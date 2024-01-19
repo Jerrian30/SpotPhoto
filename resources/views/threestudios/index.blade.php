@@ -51,7 +51,6 @@
                             <th>Name</th>
                             <th>Tanggal</th>
                             <th>jam pemesanan</th>
-                            <th>studio</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -62,7 +61,6 @@
                             <th>Name</th>
                             <th>Tanggal</th>
                             <th>jam pemesanan</th>
-                            <th>studio</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -75,7 +73,6 @@
                             <td>{{ $threestudio->name }}</td>
                             <td>{{ $threestudio->day }}</td>
                             <td>{{ $threestudio->term }}</td>
-                            <td>{{ $threestudio->studio }}</td>
                             <td>{{ $threestudio->people }}</td>
                             <td>
                                 <a href="{{ route('threestudios.edit', $threestudio->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>

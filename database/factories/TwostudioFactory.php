@@ -20,7 +20,6 @@ class TwostudioFactory extends Factory
             'name'   => fake()->name(mt_rand(1,2)),
             'day'   => fake()->date(),
             'term' => fake()->time(),
-            'studio' => fake()->numberBetween(1,3),
             'people' => fake()->numberBetween(1,6)
         ];
     }

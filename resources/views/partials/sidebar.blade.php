@@ -29,7 +29,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-item" href="buttons.html"><b>Semua</b></h6>
+                        <a href="#"><h6 class="collapse-item" ><b>Semua</b></h6></a>
                         <a class="collapse-item" href="{{ route('onestudios.index') }}">Studio 1</a>
                         <a class="collapse-item" href="{{ route('twostudios.index') }}">Studio 2</a>
                         <a class="collapse-item" href="{{ route('threestudios.index') }}">Studio 3</a>

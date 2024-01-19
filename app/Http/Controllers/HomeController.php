@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Charts\DataCustomers;
-use App\Models\OneStudio;
-use App\Models\TwoStudio;
-use App\Models\ThreeStudio;
+use App\Charts\PerbandinganStudio;
+use App\Charts\OneStudioChart;
+use App\Charts\TwoStudioChart;
+use App\Charts\ThreeStudioChart;
+use App\Models\Onestudio;
+use App\Models\Twostudio;
+use App\Models\Threestudio;
 
 class HomeController extends Controller
 {
-    public function index(DataCustomers $chart)
+    public function index(PerbandinganStudio $allstudio)
     {
-        return view('home', ['chart' => $chart->build()]);
+        return view('home',
+        [
+            'allstudio' =>$allstudio->build(),
+
+        ]);
     }
 }

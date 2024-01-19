@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->date('day');
             $table->string('term');
-            $table->string('studio');
             $table->integer('people');
             $table->timestamps();
         });

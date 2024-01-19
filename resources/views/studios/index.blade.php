@@ -13,7 +13,7 @@
     </div>
 @endif
 
-<form action="{{ route('onestudios.index') }}" class="form-inline my-2 my-md-0 navbar-search">
+<form action="{{ route('allstudios.index') }}" class="form-inline my-2 my-md-0 navbar-search">
     @csrf
     <div class="input-group mb-3">
         <input type="text" name="search" class="form-control bg-light border-2 small" placeholder="Search for..." >
@@ -38,7 +38,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-center" style="color: pink;">Data Customers Studio 1</h6>
-            <a href="{{ route('onestudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Data Customers Studio 1</a>
+            <a href="#" class="btn" style="background-color: pink; color: white;">Tambah Data Customers Studio 1</a>
          <div class="card-body">
             <div class="table-responsive">
                 @if($onestudios->isEmpty())
@@ -50,7 +50,7 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Tanggal</th>
-                            <th>Waktu pemesanan</th>
+                            <th>jam pemesanan</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -60,20 +60,20 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Tanggal</th>
-                            <th>Waktu pemesanan</th>
+                            <th>jam pemesanan</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         
-                        @foreach($onestudios as $onestudio)
+                        @foreach($studios as $studio)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $onestudio->name }}</td>
-                            <td>{{ $onestudio->day }}</td>
-                            <td>{{ $onestudio->term }}</td>
-                            <td>{{ $onestudio->people }}</td>
+                            <td>{{ $studio->name }}</td>
+                            <td>{{ $studio->day }}</td>
+                            <td>{{ $studio->term }}</td>
+                            <td>{{ $studio->people }}</td>
                             <td>
                                 <a href="{{ route('onestudios.edit', $onestudio->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('onestudios.destroy', $onestudio->id) }}" method="post" style="display:inline-block;">
