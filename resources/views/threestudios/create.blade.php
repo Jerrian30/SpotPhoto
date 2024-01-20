@@ -7,7 +7,7 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="#" method="POST">
+                <form action="{{ route('threestudios.store') }}" method="POST">
                     @csrf
 
                     <div class="form-group">
@@ -23,11 +23,6 @@
                     <div class="form-group">
                         <label for="term">Waktu Pemesanan:</label>
                         <input type="text" class="form-control" name="term" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="studio">Studio:</label>
-                        <input type="text" class="form-control" name="studio" required>
                     </div>
 
                     <div class="form-group">

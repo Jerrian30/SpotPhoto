@@ -7,7 +7,7 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="#" method="POST">
+                <form action="{{ route('threestudios.update', $threestudio->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -23,11 +23,6 @@
                     <div class="form-group">
                         <label for="term">Waktu Pemesanan:</label>
                         <input type="text" class="form-control" name="term" required value="{{ old('term', $customer->term) }}">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="studio">Studio:</label>
-                        <input type="text" class="form-control" name="studio" required value="{{ old('studio', $customer->studio) }}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Simpan</button>

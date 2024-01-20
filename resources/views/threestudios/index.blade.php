@@ -37,8 +37,13 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-center" style="color: pink;">Data Customers Studio 3</h6>
-            <a href="{{ route('threestudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Data Customers</a>
+            <h6 class="m-0 font-weight-bold text-center" style="color: pink;">
+                {{ Request::url() === route('threestudios.indexall') ? 'Data Customers' : 'Data Customers Hari ini' }}
+            </h6>
+            <a href="{{ route('threestudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Customers</a>
+            <a href="{{ Request::url() === route('threestudios.indexall') ? route('threestudios.index') : route('threestudios.indexall') }}" class="btn" style="background-color: pink; color: white;">
+                {{ Request::url() === route('threestudios.indexall') ? 'Lihat Data Hari Ini' : 'Lihat Semua Data' }}
+            </a>
          <div class="card-body">
             <div class="table-responsive">
                 @if($threestudios->isEmpty())

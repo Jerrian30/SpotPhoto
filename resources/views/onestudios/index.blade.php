@@ -37,8 +37,13 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-center" style="color: pink;">Data Customers Studio 1</h6>
-            <a href="{{ route('onestudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Data Customers Studio 1</a>
+            <h6 class="m-0 font-weight-bold text-center" style="color: pink;">
+                {{ Request::url() === route('onestudios.indexall') ? 'Data Customers' : 'Data Customers Hari ini' }}
+            </h6>
+            <a href="{{ route('onestudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Customers</a>
+            <a href="{{ Request::url() === route('onestudios.indexall') ? route('onestudios.index') : route('onestudios.indexall') }}" class="btn" style="background-color: pink; color: white;">
+                {{ Request::url() === route('onestudios.indexall') ? 'Lihat Data Hari Ini' : 'Lihat Semua Data' }}
+            </a>
          <div class="card-body">
             <div class="table-responsive">
                 @if($onestudios->isEmpty())
@@ -79,7 +84,7 @@
                                 <form action="{{ route('onestudios.destroy', $onestudio->id) }}" method="post" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data karyawan {{ $onestudio->nama }}?')"><i class="fas fa-trash-alt"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data {{ $onestudio->nama }}?')"><i class="fas fa-trash-alt"></i></button>
                             </td>
                             
                         </tr>

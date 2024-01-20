@@ -12,9 +12,17 @@ class ThreestudioController extends Controller
      */
     public function index()
     {
+        $threestudios = Threestudio::whereDate('day', now()->format('Y-m-d'))
+        ->orderBy('term')
+        ->get();
+        return view('threestudios.index', compact('threestudios'));
+    }
+    public function indexall()
+    {
         $threestudios = Threestudio::all();
         return view('threestudios.index', compact('threestudios'));
     }
+
 
     /**
      * Show the form for creating a new resource.

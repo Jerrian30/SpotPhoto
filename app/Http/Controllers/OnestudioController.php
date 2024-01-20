@@ -12,6 +12,13 @@ class OnestudioController extends Controller
      */
     public function index()
     {
+        $onestudios = Onestudio::whereDate('day', now()->format('Y-m-d'))
+        ->orderBy('term')
+        ->get();
+        return view('onestudios.index', compact('onestudios'));
+    }
+    public function indexall()
+    {
         $onestudios = Onestudio::all();
         return view('onestudios.index', compact('onestudios'));
     }
@@ -21,7 +28,7 @@ class OnestudioController extends Controller
      */
     public function create()
     {
-        //
+        return view('onestudios.create');
     }
 
     /**
@@ -29,7 +36,16 @@ class OnestudioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'day' => 'required|date',
+            'term' => 'required|string',
+            'people' => 'required|string',
+        ]);
+        Onestudio::create($request->all());
+        return redirect()
+        ->route('onestudios.index')
+        ->with('success', 'Berhasil menambah data customers');
     }
 
     /**
@@ -43,24 +59,37 @@ class OnestudioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Onestudio $onestudio)
     {
-        //
+        return view('onestudios.edit', compact('onestudio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Onestudio $onestudio)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'day' => 'required|date',
+            'term' => 'required|string',
+            'people' => 'required|string',
+        ]);
+        $onestudio->update($request->all());
+        return redirect()
+        ->route('onestudios.index')
+        ->with('success', 'Customer berhasil diedit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Onestudio $onestudio)
     {
-        //
+        $onestudio->delete();
+
+        return redirect()
+        ->route('onestudios.index')
+        ->with('delete', 'Customer berhasil dihapus');
     }
 }

@@ -19,6 +19,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('onestudios', OnestudioController::class);
+Route::get('/allstudio1', [OnestudioController::class, 'indexall'])->name('onestudios.indexall');
 
 Route::resource('twostudios', TwostudioController::class);
 Route::resource('threestudios', ThreestudioController::class);
+Route::get('/allstudio3', [ThreestudioController::class, 'indexall'])->name('threestudios.indexall');
