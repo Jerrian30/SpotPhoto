@@ -12,17 +12,22 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="name">Nama:</label>
-                        <input type="text" class="form-control" name="name" required value="{{ old('name', $customer->name) }}">
+                        <input type="text" class="form-control" name="name" required value="{{ old('name', $threestudio->name) }}">
                     </div>
 
                     <div class="form-group">
                         <label for="day">Tanggal Pesanan:</label>
-                        <input type="date" class="form-control" name="day" required value="{{ old('day', $customer->day) }}">
+                        <input type="date" class="form-control" name="day" required value="{{ old('day', $threestudio->day) }}">
                     </div>
 
                     <div class="form-group">
                         <label for="term">Waktu Pemesanan:</label>
-                        <input type="text" class="form-control" name="term" required value="{{ old('term', $customer->term) }}">
+                        <input type="text" class="form-control" name="term" required value="{{ old('term', $threestudio->term) }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people">Jumlah:</label>
+                        <input type="text" class="form-control" name="people" required value="{{ old('people', $threestudio->people) }}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Simpan</button>

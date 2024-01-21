@@ -7,7 +7,7 @@
 
         <div class="card">
             <div class="card-body">
-                <form action="#" method="POST">
+                <form action="{{ route('twostudios.store') }}" method="POST">
                     @csrf
 
                     <div class="form-group">
@@ -26,12 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="studio">Studio:</label>
-                        <input type="text" class="form-control" name="studio" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="studio">Jumlah:</label>
+                        <label for="people">Jumlah:</label>
                         <input type="text" class="form-control" name="people" required>
                     </div>
 

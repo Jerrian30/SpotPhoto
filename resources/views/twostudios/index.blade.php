@@ -37,8 +37,13 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-center" style="color: pink;">Data Customers Studio 2</h6>
-            <a href="{{ route('twostudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Data Customers</a>
+            <h6 class="m-0 font-weight-bold text-center" style="color: pink;">
+                {{ Request::url() === route('twostudios.indexall') ? 'Data Customers' : 'Data Customers Hari ini' }}
+            </h6>
+            <a href="{{ route('twostudios.create') }}" class="btn" style="background-color: pink; color: white;">Tambah Customers</a>
+            <a href="{{ Request::url() === route('twostudios.indexall') ? route('twostudios.index') : route('twostudios.indexall') }}" class="btn" style="background-color: pink; color: white;">
+                {{ Request::url() === route('twostudios.indexall') ? 'Lihat Data Hari Ini' : 'Lihat Semua Data' }}
+            </a>
          <div class="card-body">
             <div class="table-responsive">
                 @if($twostudios->isEmpty())
@@ -75,7 +80,6 @@
                             <td>{{ $twostudio->name }}</td>
                             <td>{{ $twostudio->day }}</td>
                             <td>{{ $twostudio->term }}</td>
-                            <td>{{ $twostudio->studio }}</td>
                             <td>{{ $twostudio->people }}</td>
                             <td>
                                 <a href="{{ route('twostudios.edit', $twostudio->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>

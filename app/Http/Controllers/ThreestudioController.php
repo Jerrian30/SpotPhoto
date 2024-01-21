@@ -29,7 +29,7 @@ class ThreestudioController extends Controller
      */
     public function create()
     {
-        //
+        return view('threestudios.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class ThreestudioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'day' => 'required|date',
+            'term' => 'required|string',
+            'people' => 'required|string',
+        ]);
+        Threestudio::create($request->all());
+        return redirect()
+        ->route('threestudios.index')
+        ->with('success', 'Berhasil menambah data customers');
     }
 
     /**
@@ -51,24 +60,37 @@ class ThreestudioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Threestudio $threestudio)
     {
-        //
+        return view('threestudios.edit', compact('threestudio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Threestudio $threestudio)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'day' => 'required|date',
+            'term' => 'required|string',
+            'people' => 'required|string',
+        ]);
+        $threestudio->update($request->all());
+        return redirect()
+        ->route('threestudios.index')
+        ->with('success', 'Berhasil menambah data customers');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Threesdtudio $threestudio)
     {
-        //
+        $threestudio->delete();
+
+        Redirect()
+        ->route('threestudios.index')
+        ->with('delete', 'Customers berhasil dihapus');
     }
 }

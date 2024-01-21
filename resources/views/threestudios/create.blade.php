@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="studio">Jumlah:</label>
+                        <label for="people">Jumlah:</label>
                         <input type="text" class="form-control" name="people" required>
                     </div>
 

@@ -18,7 +18,7 @@ class ThreestudioFactory extends Factory
     {
         return [
             'name'   => fake()->name(mt_rand(1,2)),
-            'day'   => fake()->date(),
+            'day'   => fake()->date('2024_01_20'),
             'term' => fake()->time(),
             'people' => fake()->numberBetween(1,6)
         ];
