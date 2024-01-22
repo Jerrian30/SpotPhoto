@@ -41,6 +41,7 @@ class OnestudioController extends Controller
             'day' => 'required|date',
             'term' => 'required|string',
             'people' => 'required|string',
+            'price' =>'required|integer',
         ]);
         Onestudio::create($request->all());
         return redirect()
@@ -74,6 +75,7 @@ class OnestudioController extends Controller
             'day' => 'required|date',
             'term' => 'required|string',
             'people' => 'required|string',
+            'price' =>'required|integer',
         ]);
         $onestudio->update($request->all());
         return redirect()

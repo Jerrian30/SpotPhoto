@@ -42,6 +42,7 @@ class ThreestudioController extends Controller
             'day' => 'required|date',
             'term' => 'required|string',
             'people' => 'required|string',
+            'price' =>'required|integer',
         ]);
         Threestudio::create($request->all());
         return redirect()
@@ -75,6 +76,7 @@ class ThreestudioController extends Controller
             'day' => 'required|date',
             'term' => 'required|string',
             'people' => 'required|string',
+            'price' =>'required|integer',
         ]);
         $threestudio->update($request->all());
         return redirect()
@@ -85,12 +87,12 @@ class ThreestudioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Threesdtudio $threestudio)
+    public function destroy(Threestudio $threestudio)
     {
         $threestudio->delete();
 
-        Redirect()
+        return redirect()
         ->route('threestudios.index')
-        ->with('delete', 'Customers berhasil dihapus');
+        ->with('delete', 'Customer berhasil dihapus');
     }
 }

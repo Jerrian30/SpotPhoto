@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('day');
             $table->string('term');
             $table->integer('people');
+            $table->integer('price'); 
             $table->timestamps();
         });
     }

@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="h3 mb-4 text-gray-800">Create New Customers</h1>
+        <h1 class="h3 mb-4 text-gray-800">Buat Customers Studio 1</h1>
 
         <div class="card">
             <div class="card-body">
@@ -28,6 +28,11 @@
                     <div class="form-group">
                         <label for="studio">Jumlah:</label>
                         <input type="text" class="form-control" name="people" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Harga:</label>
+                        <input type="text" class="form-control" name="price" required >
                     </div>
 
                     <button type="submit" class="btn btn-primary">Tambah</button>

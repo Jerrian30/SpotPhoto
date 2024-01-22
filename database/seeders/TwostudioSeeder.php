@@ -13,6 +13,6 @@ class TwostudioSeeder extends Seeder
      */
     public function run(): void
     {
-        Twostudio::factory(10)->create();
+        Twostudio::factory(20)->create();
     }
 }

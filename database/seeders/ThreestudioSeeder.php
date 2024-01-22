@@ -13,6 +13,6 @@ class ThreestudioSeeder extends Seeder
      */
     public function run(): void
     {
-        Threestudio::factory(10)->create();
+        Threestudio::factory(20)->create();
     }
 }

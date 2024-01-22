@@ -57,7 +57,10 @@
                             <th>Tanggal</th>
                             <th>Waktu pemesanan</th>
                             <th>Jumlah</th>
+                            <th>Harga</th>
                             <th>Aksi</th>
+                            
+                            
                         </tr>
                     </thead>
                     <tfoot>
@@ -67,7 +70,9 @@
                             <th>Tanggal</th>
                             <th>Waktu pemesanan</th>
                             <th>Jumlah</th>
+                            <th>Harga</th>
                             <th>Aksi</th>
+                            
                         </tr>
                     </tfoot>
                     <tbody>
@@ -79,6 +84,7 @@
                             <td>{{ $onestudio->day }}</td>
                             <td>{{ $onestudio->term }}</td>
                             <td>{{ $onestudio->people }}</td>
+                            <td>{{ number_format($onestudio->price, 0, ',', '.')  }}</td>
                             <td>
                                 <a href="{{ route('onestudios.edit', $onestudio->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('onestudios.destroy', $onestudio->id) }}" method="post" style="display:inline-block;">

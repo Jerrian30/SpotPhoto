@@ -30,6 +30,11 @@
                         <input type="text" class="form-control" name="people" required value="{{ old('people', $threestudio->people) }}">
                     </div>
 
+                    <div class="form-group">
+                        <label for="people">Harga:</label>
+                        <input type="text" class="form-control" name="price" required value="{{ old('price', $threestudio->price) }}">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>

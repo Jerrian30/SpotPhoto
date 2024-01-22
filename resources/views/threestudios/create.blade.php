@@ -30,6 +30,11 @@
                         <input type="text" class="form-control" name="people" required>
                     </div>
 
+                    <div class="form-group">
+                        <label for="price">Harga:</label>
+                        <input type="text" class="form-control" name="price" required ">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Tambah</button>
                 </form>
             </div>

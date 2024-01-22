@@ -57,6 +57,7 @@
                             <th>Tanggal</th>
                             <th>jam pemesanan</th>
                             <th>Jumlah</th>
+                            <th>Harga</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -67,6 +68,7 @@
                             <th>Tanggal</th>
                             <th>jam pemesanan</th>
                             <th>Jumlah</th>
+                            <th>Harga</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
@@ -79,6 +81,7 @@
                             <td>{{ $threestudio->day }}</td>
                             <td>{{ $threestudio->term }}</td>
                             <td>{{ $threestudio->people }}</td>
+                            <td>{{ number_format($threestudio->price, 0, ',', '.')  }}</td>
                             <td>
                                 <a href="{{ route('threestudios.edit', $threestudio->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('threestudios.destroy', $threestudio->id) }}" method="post" style="display:inline-block;">

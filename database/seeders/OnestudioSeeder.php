@@ -13,6 +13,6 @@ class OnestudioSeeder extends Seeder
      */
     public function run(): void
     {
-        Onestudio::factory(10)->create();
+        Onestudio::factory(20)->create();
     }
 }

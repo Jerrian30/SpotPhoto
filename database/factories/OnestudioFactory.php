@@ -18,9 +18,10 @@ class OnestudioFactory extends Factory
     {
         return [
             'name'   => fake()->name(mt_rand(1,2)),
-            'day'   => fake()->date('2024_01_20'),
+            'day'   => fake()->date('2024_02_22'),
             'term' => fake()->time(),
-            'people' => fake()->numberBetween(1,6)
+            'people' => fake()->numberBetween(1,8),
+            'price' => fake()->numberBetween(1000000,2000000)
         ];
     }
 }

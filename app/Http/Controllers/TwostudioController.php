@@ -42,6 +42,7 @@ class TwostudioController extends Controller
             'day' => 'required|date',
             'term' => 'required|string',
             'people' => 'required|string',
+            'price' =>'required|integer',
         ]);
         Twostudio::create($request->all());
         return redirect()
@@ -75,6 +76,7 @@ class TwostudioController extends Controller
             'day' => 'required|date',
             'term' => 'required|string',
             'people' => 'required|string',
+            'price' =>'required|integer',
         ]);
         $twostudio->update($request->all());
         return redirect()
@@ -89,7 +91,7 @@ class TwostudioController extends Controller
     {
         $twostudio->delete();
 
-        Redirect()
+        return redirect()
         ->route('twostudios.index')
         ->with('delete', 'Customers berhasil dihapus');
     }

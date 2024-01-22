@@ -30,6 +30,11 @@
                         <input type="text" class="form-control" name="people" required value="{{ old('studio', $onestudio->people) }}">
                     </div>
 
+                    <div class="form-group">
+                        <label for="studio">Harga:</label>
+                        <input type="text" class="form-control" name="price" required value="{{ old('price', $onestudio->price) }}">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>

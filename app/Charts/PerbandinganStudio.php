@@ -19,13 +19,13 @@ class PerbandinganStudio
 
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
-        // Mengambil data total "people" dari model Onestudio selama 7 hari terakhir
+        
         $onestudioPeople = Onestudio::whereDate('day', '>=', now()->subDays(6))->groupBy('day')->orderBy('day')->pluck(\DB::raw('SUM(people)'))->toArray();
 
-        // Mengambil data total "people" dari model Twostudio selama 7 hari terakhir
+
         $twostudioPeople = Twostudio::whereDate('day', '>=', now()->subDays(6))->groupBy('day')->orderBy('day')->pluck(\DB::raw('SUM(people)'))->toArray();
 
-        // Mengambil data total "people" dari model Threestudio selama 7 hari terakhir
+        
         $threestudioPeople = Threestudio::whereDate('day', '>=', now()->subDays(6))->groupBy('day')->orderBy('day')->pluck(\DB::raw('SUM(people)'))->toArray();
 
         // Membuat array untuk sumbu x (X-axis) dengan tanggal selama 7 hari terakhir

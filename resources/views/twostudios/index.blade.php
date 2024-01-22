@@ -56,7 +56,6 @@
                             <th>Name</th>
                             <th>Tanggal</th>
                             <th>jam pemesanan</th>
-                            <th>studio</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -67,7 +66,6 @@
                             <th>Name</th>
                             <th>Tanggal</th>
                             <th>jam pemesanan</th>
-                            <th>studio</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -80,7 +78,7 @@
                             <td>{{ $twostudio->name }}</td>
                             <td>{{ $twostudio->day }}</td>
                             <td>{{ $twostudio->term }}</td>
-                            <td>{{ $twostudio->people }}</td>
+                            <td>{{ number_format( $twostudio->people, 0, ',', '.') }}</td>
                             <td>
                                 <a href="{{ route('twostudios.edit', $twostudio->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('twostudios.destroy', $twostudio->id) }}" method="post" style="display:inline-block;">
