@@ -5,6 +5,7 @@ use App\Http\Controllers\OnestudioController;
 use App\Http\Controllers\TwostudioController;
 use App\Http\Controllers\ThreestudioController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AbsenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/allstudio2', [TwostudioController::class, 'indexall'])->name('twost
 
 Route::resource('threestudios', ThreestudioController::class);
 Route::get('/allstudio3', [ThreestudioController::class, 'indexall'])->name('threestudios.indexall');
+Route::resource('absences', AbsenceController::class);
